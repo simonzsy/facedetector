@@ -3,10 +3,11 @@ FROM ubuntu:latest
 RUN  sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
 RUN  apt-get clean
 RUN apt-get update
-RUN apt-get install -y wget 
-RUN wget -O /tmp/get-pip3.py https://bootstrap.pypa.io/get-pip3.py
-RUN python /tmp/get-pip3.py
-RUN pip3 install
+RUN  apt-get upgrade -y
+RUN apt-get install -y python3-pip
+RUN pip3 install pip -U
+RUN pip3 config set global.index-url http://mirrors.aliyun.com/pypi/simple
+RUN pip3 config set install.trusted-host mirrors.aliyun.com
 RUN apt-get install -y bzip2 
 RUN apt-get install -y python-dev 
 RUN apt-get install -y cmake
