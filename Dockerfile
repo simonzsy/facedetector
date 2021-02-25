@@ -1,9 +1,17 @@
 FROM ubuntu:latest
 
-RUN apt-get update && apt-get install -y \
-    python-pip wget bzip2 python-dev cmake \
-    zip libboost-all-dev gunicorn \
-    libsm6 libxext6 libfontconfig1 libxrender1
+RUN apt-get update && apt-get install -y python-pip
+RUN apt-get update && apt-get install -y wget 
+RUN apt-get update && apt-get install -y bzip2 
+RUN apt-get update && apt-get install -y python-dev 
+RUN apt-get update && apt-get install -y cmake
+RUN apt-get update && apt-get install -y zip 
+RUN apt-get update && apt-get install -y libboost-all-dev 
+RUN apt-get update && apt-get install -y gunicorn
+RUN apt-get update && apt-get install -y libsm6 
+RUN apt-get update && apt-get install -y libxext6 
+RUN apt-get update && apt-get install -y libfontconfig1 
+RUN apt-get update && apt-get install -y libxrender1
 
 COPY . /app
 
