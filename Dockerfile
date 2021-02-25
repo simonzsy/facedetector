@@ -26,4 +26,4 @@ RUN pip3 install -r requirements.txt
 
 #EXPOSE 5000
 
-CMD [ "gunicorn", "-b 0.0.0.0:5000", "server:app" ]
+CMD [ "gunicorn", "--bind :8080", "server:app" ]
