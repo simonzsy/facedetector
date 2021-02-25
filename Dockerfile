@@ -26,6 +26,7 @@ WORKDIR /app/face_detection/data
 RUN chmod +x models.sh && ./models.sh
 
 WORKDIR /app
+RUN pip3 install scikit-build
 RUN pip3 install -r requirements.txt
 
 #EXPOSE 5000
