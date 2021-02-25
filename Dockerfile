@@ -1,5 +1,6 @@
 FROM ubuntu:18.04
 
+RUN apt-get update && apt-get install -y python
 RUN apt-get update && apt-get install -y python-pip
 RUN apt-get update && apt-get install -y wget 
 RUN apt-get update && apt-get install -y bzip2 
@@ -23,4 +24,4 @@ RUN pip install -r requirements.txt
 
 #EXPOSE 5000
 
-CMD exec gunicorn --bind :8080 server:app
+CMD [ "gunicorn", "-bind :8080", "server:app" ]
