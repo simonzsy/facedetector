@@ -3,7 +3,7 @@ FROM ubuntu:latest
 RUN  sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
 RUN  apt-get clean
 RUN apt-get update
-RUN apt-get install -y python-pip
+#RUN apt-get install -y python3-pip
 RUN apt-get install -y wget 
 RUN apt-get install -y bzip2 
 RUN apt-get install -y python-dev 
@@ -22,7 +22,7 @@ WORKDIR /app/face_detection/data
 RUN chmod +x models.sh && ./models.sh
 
 WORKDIR /app
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 #EXPOSE 5000
 
