@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:latest
 
 RUN  sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
 RUN  apt-get clean
