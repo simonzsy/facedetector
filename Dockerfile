@@ -3,12 +3,10 @@ FROM ubuntu:latest
 RUN  sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
 RUN  apt-get clean
 RUN apt-get update
-#RUN apt-get install -y python3.8
-#RUN rm /usr/bin/python
-#RUN ln -s /usr/bin/python3.8 /usr/bin/python
-RUN apt-get install -y python3-pip
-#RUN ln -s /usr/bin/pip3 /usr/bin/pip 
 RUN apt-get install -y wget 
+RUN wget -O /tmp/get-pip3.py https://bootstrap.pypa.io/get-pip3.py
+RUN python /tmp/get-pip3.py
+RUN pip3 install
 RUN apt-get install -y bzip2 
 RUN apt-get install -y python-dev 
 RUN apt-get install -y cmake
