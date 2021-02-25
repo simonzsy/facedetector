@@ -13,6 +13,6 @@ RUN chmod +x models.sh && ./models.sh
 WORKDIR /app
 RUN pip install -r requirements.txt
 
-EXPOSE 5000
+#EXPOSE 5000
 
-CMD [ "gunicorn", "-b 0.0.0.0:5000", "server:app" ] 
+CMD exec gunicorn --bind :8080 server:app
