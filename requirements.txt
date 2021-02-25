@@ -1,5 +1,5 @@
 dlib==19.7
-skbuild
+scikit-build
 opencv-contrib-python
 scikit-image
 imutils
